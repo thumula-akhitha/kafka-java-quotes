@@ -55,7 +55,7 @@ public class QuoteProducer {
     }
   
     private static String createQuotes() {
-      return "Don’t take rest after your first victory because if you fail in second, more lips are waiting to say that your first victory was just luck."+
+      return "Don't take rest after your first victory because if you fail in second, more lips are waiting to say that your first victory was just luck."+
       "\n"+"You have to dream before your dreams can come true."+"\n"+"Failure will never overtake me if my definition to succeed is strong enough."+"Look at the sky. We are not alone. The whole universe is friendly to us and conspires only to those who dream and work."+"- APJ Abdul Kalam";
     }
 }
