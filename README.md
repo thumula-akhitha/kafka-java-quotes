@@ -18,7 +18,7 @@ create a temp folder and open the powershell in this folder and run this command
 
 ### To run the producer
 This allows you to send the messages to the topic
-``` java -cp target/kafka-java-quotes-1.0-SNAPSHOT-jar-with-dependencies.jar edu.nwmissouri.quotes.QuoteProducer quotes```
+``` java -cp target/kafka-java-quotes-1.0-SNAPSHOT-jar-with-dependencies.jar com.inspirational.quotes.QuoteProducer quotes```
 ### To run the consumer 
 It will display the messages sent to the topic
-``` java -cp target/kafka-java-quotes-1.0-SNAPSHOT-jar-with-dependencies.jar edu.nwmissouri.quotes.QuoteConsumer quotes group1 ```
+``` java -cp target/kafka-java-quotes-1.0-SNAPSHOT-jar-with-dependencies.jar com.inspirational.quotes.QuoteConsumer quotes group1 ```

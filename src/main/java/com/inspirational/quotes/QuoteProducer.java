@@ -1,4 +1,4 @@
-package edu.nwmissouri.quotes;
+package com.inspirational.quotes;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -55,7 +55,11 @@ public class QuoteProducer {
     }
   
     private static String createQuotes() {
-      return "Don't take rest after your first victory because if you fail in second, more lips are waiting to say that your first victory was just luck."+
-      "\n"+"You have to dream before your dreams can come true."+"\n"+"Failure will never overtake me if my definition to succeed is strong enough."+"Look at the sky. We are not alone. The whole universe is friendly to us and conspires only to those who dream and work."+"- APJ Abdul Kalam";
+      String[] arrayOfQuotes = {"Dont take rest after your first victory because if you fail in second, more lips are waiting to say that your first victory was just luck.","You have to dream before your dreams can come true","Failure will never overtake me if my definition to succeed is strong enough.","Look at the sky. We are not alone. The whole universe is friendly to us and conspires only to those who dream and work."};
+      String value = " ";
+      for (int i=0;i<arrayOfQuotes.length;i++){
+         value = value + "quote" + i  + " -- "+arrayOfQuotes[i]+"\n";
+      }
+      return value;
     }
 }
