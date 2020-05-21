@@ -32,12 +32,12 @@ public class QuoteProducer {
   
       org.apache.kafka.clients.producer.Producer producer = new KafkaProducer(configProperties);
   
-      // Make our own messages - create your custom logic here
-  
-     
-        String message = createQuotes();
-        ProducerRecord<String, String> rec = new ProducerRecord<String, String>(topicName, message);
-        producer.send(rec);
+      // Make our own messages - create your custom logic
+        for (int i=0; i<5; i++) {
+          String message = "quotes "+i+" -- "+createQuotes(i);
+          ProducerRecord<String, String> rec = new ProducerRecord<String, String>(topicName, message);
+          producer.send(rec);
+        }
     
   
       // still allow input from keyboard
@@ -54,13 +54,15 @@ public class QuoteProducer {
   
     }
   
-    private static String createQuotes() {
-      String[] arrayOfQuotes = {"Dont take rest after your first victory because if you fail in second, more lips are waiting to say that your first victory was just luck.","You have to dream before your dreams can come true","Failure will never overtake me if my definition to succeed is strong enough.","Look at the sky. We are not alone. The whole universe is friendly to us and conspires only to those who dream and work.","A dream is not that which you see while sleeping, it is something that does not let you sleep.",
-      "If you want to shine like a sun, first burn like a sun."};
-      String value = " ";
-      for (int i=0;i<arrayOfQuotes.length;i++){
-         value = value + "quote" + i  + " -- "+arrayOfQuotes[i]+"\n";
-      }
-      return value;
+    private static String createQuotes(int index) {
+      String[] arrayOfQuotes = {
+        "Dont take rest after your first victory because if you fail in second, more lips are waiting to say that your first victory was just luck.",
+        "You have to dream before your dreams can come true","Failure will never overtake me if my definition to succeed is strong enough.",
+        "Look at the sky. We are not alone. The whole universe is friendly to us and conspires only to those who dream and work.",
+        "A dream is not that which you see while sleeping, it is something that does not let you sleep.",
+      "If you want to shine like a sun, first burn like a sun."
+    };
+      return arrayOfQuotes[index];
+       
     }
 }
